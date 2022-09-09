@@ -19,7 +19,7 @@ FROM --platform=$TARGETPLATFORM python:3.9-slim-bullseye as builder
 
 RUN apt-get update && apt-get install -y binutils
 
-COPY ./app /app
+COPY ./ /app
 
 # Remove this installation for Arm64 once staticx has a prebuilt wheel for Arm64
 RUN /bin/bash -c 'set -ex && \
